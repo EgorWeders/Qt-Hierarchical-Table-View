@@ -133,9 +133,9 @@ HT_Item* HT_Item::PlaceholderItemRemove()
         return this;                                                        // the doppelganger
     int trow = p->_doppelganger->row();
     _parent->takeRow(trow);
-    delete p->_doppelganger;
-    p->_doppelganger = nullptr;
     _parent->insertRow(trow, p);
+     delete p->_doppelganger;
+    p->_doppelganger = nullptr;
     return p;
 }
 
